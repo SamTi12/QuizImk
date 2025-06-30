@@ -1,0 +1,306 @@
+/* Mario Bros Theme */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#mario-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.auth-container, .quiz-container, .leaderboard-container {
+    position: relative;
+    z-index: 1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-container {
+    background: #ffab34;
+    border: 8px solid #e67e22;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 #b3541e, 0 16px 32px rgba(0,0,0,0.2);
+    max-width: 350px;
+    margin: 80px auto;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    color: #e74c3c;
+    font-size: 2rem;
+    margin-bottom: 32px;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #b3541e;
+}
+
+input[type="text"] {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 12px;
+    border: 4px solid #27ae60;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    width: 80%;
+    box-sizing: border-box;
+    background: #fffbe6;
+    color: #333;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #e74c3c;
+}
+
+button[type="submit"] {
+    font-family: inherit;
+    font-size: 1rem;
+    background: #27ae60;
+    color: #fff;
+    border: 4px solid #145a32;
+    border-radius: 8px;
+    padding: 12px 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #145a32;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button[type="submit"]:hover {
+    background: #e74c3c;
+    border-color: #b3541e;
+    box-shadow: 0 2px 0 #b3541e;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    font-family: inherit;
+}
+
+/* Optional: Add a Mario pixel art or block at the top */
+.auth-container::before {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 48px;
+    background: url('https://www.spriters-resource.com/resources/sheet_icons/1/1462.png') no-repeat center/cover;
+    position: absolute;
+    top: -56px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: lightyellow;
+    cursor: pointer;
+    color: #666;
+}
+
+.tab-btn.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.quiz-container {
+    background: #ffab34;
+    border: 8px solid #e67e22;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 #b3541e, 0 16px 32px rgba(0,0,0,0.2);
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    color: #b3541e;
+    /* Optional: pixelated effect */
+    image-rendering: pixelated;
+    animation: bounceIn 0.7s;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+.quiz-header h1,
+.leaderboard-container h1 {
+    color: #000000;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #b3541e;
+}
+
+.quiz-status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.quiz-status-bar > div {
+    background: #27ae60;
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 0;
+    margin: 0 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 0 2px 0 #145a32;
+    border: 2px solid #145a32;
+    text-align: center;
+    flex: 1 1 0;
+}
+
+#quiz-progress, #score-display, #timer {
+    flex: 1 1 0;
+    margin: 0;
+    padding: 8px 0;
+    text-align: center;
+}
+
+#question-container {
+    margin-bottom: 18px;
+    color: #000000;
+}
+
+button, #next-btn {
+    font-family: inherit;
+    font-size: 1rem;
+    background: #27ae60;
+    color: #fff;
+    border: 4px solid #145a32;
+    border-radius: 8px;
+    padding: 12px 32px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #145a32;
+    transition: background 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+}
+
+button:hover, #next-btn:hover {
+    background: #e74c3c;
+    border-color: #b3541e;
+    box-shadow: 0 2px 0 #b3541e;
+}
+
+table#leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    background: #fffbe6;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+table#leaderboard th, table#leaderboard td {
+    border: 2px solid #5c3009;
+    padding: 8px;
+    color: #000000;
+}
+
+table#leaderboard th {
+    background: #ffb347;
+    color: #000000;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.option-box {
+    background: #fffbe6;
+    border: 3px solid #e67e22;
+    border-radius: 10px;
+    padding: 14px 0;
+    margin: 10px 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+    color: #000000;
+    box-shadow: 0 2px 0 #b3541e;
+}
+
+.option-box.correct {
+    background: #27ae60 !important;
+    border-color: #145a32 !important;
+    color: #fff !important;
+}
+
+.option-box.incorrect {
+    background: #e74c3c !important;
+    border-color: #b3541e !important;
+    color: #fff !important;
+}
+
+.leaderboard-container {
+    background: #ffab34;
+    border: 8px solid #e67e22;
+    border-radius: 24px;
+    box-shadow: 0 8px 0 #b3541e, 0 16px 32px rgba(0,0,0,0.2);
+    max-width: 420px;
+    margin: 80px auto;
+    padding: 32px 24px 24px 24px;
+    text-align: center;
+    font-family: 'Press Start 2P', 'Courier New', Courier, monospace;
+    color: #b3541e;
+    image-rendering: pixelated;
+    animation: bounceIn 0.7s;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Time!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="mario-bg"></canvas>
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <div class="quiz-status-bar">
+                <div id="quiz-progress">Soal 1 / 5</div>
+                <div id="score-display">Skor: 0</div>
+                <button id="musicBtn" style="margin-top: 10px;">🔊</button>
+                <div id="timer" style="font-weight:1000; font-size:1rem; color:#e74c3c; ">Waktu: 00:00</div>
+            </div>
+        </div>
+        <div id="question-container"></div>
+        <button id="next-btn" style="display: none;">Lanjut ➔</button>
+    </div>
+    <audio id="qm" src="mario.mp3" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html>
