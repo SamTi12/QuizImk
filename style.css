@@ -304,3 +304,66 @@ table#leaderboard th {
     image-rendering: pixelated;
     animation: bounceIn 0.7s;
 }
+
+@media (max-width: 600px) {
+    .auth-container,
+    .quiz-container,
+    .leaderboard-container {
+        max-width: 98vw;
+        margin: 24px auto;
+        padding: 16px 4vw 16px 4vw;
+        border-width: 4px;
+        border-radius: 14px;
+        box-shadow: 0 4px 0 #b3541e, 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+        font-size: 1.1rem;
+        margin-bottom: 18px;
+    }
+
+    .quiz-header h1,
+    .leaderboard-container h1 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .quiz-status-bar {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    #quiz-progress, #score-display, #timer {
+        font-size: 0.95rem;
+        padding: 6px 0;
+    }
+
+    input[type="text"], input, button, #next-btn {
+        font-size: 0.95rem;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .option-box {
+        font-size: 0.95rem;
+        padding: 10px 0;
+        margin: 8px 0;
+    }
+
+    table#leaderboard th, table#leaderboard td {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}
+
+/* Untuk layar sangat kecil */
+@media (max-width: 400px) {
+    .auth-container,
+    .quiz-container,
+    .leaderboard-container {
+        padding: 8px 2vw 8px 2vw;
+    }
+    h1, .quiz-header h1, .leaderboard-container h1 {
+        font-size: 0.9rem;
+    }
+}
